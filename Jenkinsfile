@@ -12,13 +12,13 @@ pipeline {
         }
         stage("build") {
             steps { 
-                sh "sudo docker build -t flask . "
+                sh "docker build -t flask . "
             }
         }
         
         stage("deploy") {
           steps{
-            sh "sudo docker-compose down && sudo docker-compose up -d "
+            sh "docker-compose down && sudo docker-compose up -d "
           }
         }
       
